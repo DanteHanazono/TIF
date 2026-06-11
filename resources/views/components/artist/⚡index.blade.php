@@ -123,9 +123,13 @@ new class extends Component
                                                 </div>
 
                                                 <div class="min-w-0">
-                                                    <div class="truncate font-medium text-neutral-950 dark:text-neutral-50">
+                                                    <a
+                                                        href="{{ route('artists.edit', $artist) }}"
+                                                        wire:navigate
+                                                        class="truncate font-medium text-neutral-950 transition hover:text-blue-600 hover:underline dark:text-neutral-50 dark:hover:text-blue-400"
+                                                    >
                                                         {{ $artist->name }}
-                                                    </div>
+                                                    </a>
 
                                                     <div class="mt-2 flex flex-wrap gap-2">
                                                         @forelse ($artist->performances as $performance)
