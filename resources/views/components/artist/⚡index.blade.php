@@ -20,7 +20,7 @@ new class extends Component
                     filled($this->search),
                     fn ($query) => $query->where('name', 'like', '%'.$this->search.'%')
                 )
-                ->orderBy('name')
+                ->orderBy('name COLLATE NOCASE')
                 ->get(),
         ]);
     }
